@@ -1,0 +1,67 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> . 
+@prefix httpm: <http://www.w3.org/2011/http-methods#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbpedia-owl: <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+{
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI <http://dbpedia.org/resource/Category:Health> .
+} 
+
+{
+	?a skos:broader <http://dbpedia.org/resource/Category:Health> .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?a .
+} .
+
+{
+	?a skos:broader <http://dbpedia.org/resource/Category:Health> .
+	?b skos:broader ?a .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?b .
+} .
+
+{
+	?a skos:broader <http://dbpedia.org/resource/Category:Health> .
+	?b skos:broader ?a .
+	?c skos:broader ?b .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?c .
+} .
+
+{
+	?a skos:broader <http://dbpedia.org/resource/Category:Health> .
+	?b skos:broader ?a .
+	?a skos:broader ?b .
+	?d skos:broader ?c .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?d .
+} .
+
+{
+	?a skos:broader <http://dbpedia.org/resource/Category:Health> .
+	?b skos:broader ?a .
+	?a skos:broader ?b .
+	?d skos:broader ?c .
+	?e skos:broader ?d .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?e .
+} .
+
+{
+	?x dcterms:subject ?y .
+} => {
+	[] 	http:mthd httpm:GET ; 
+        http:requestURI ?x.
+} .
