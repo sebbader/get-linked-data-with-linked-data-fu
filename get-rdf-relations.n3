@@ -1,0 +1,8022 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> . 
+@prefix httpm: <http://www.w3.org/2011/http-methods#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+######################Rules to follow
+{
+	?x a ?y .
+} => {
+	[]	http:mthd httpm:GET ; 
+		http:requestURI ?y .
+} . 
+
+####################### Relations to load
+
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#label> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:side-effect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/ns/void#inDataset> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/identifier> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/bio2rdf_vocabulary:identifier> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/bio2rdf_vocabulary:namespace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/bio2rdf_vocabulary:uri> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#sameAs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/subject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:lower-level-term> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:preferred-term> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:reported-frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:upper-frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:lower-frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:drug> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:effect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/abstract> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#comment> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageRedirects> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageExternalLink> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/prov#wasDerivedFrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageRevisionID> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:indication> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageID> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/primaryTopic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/isPrimaryTopicOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hasPhotoCollection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#broader> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/elements/1.1/description> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:placebo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#prefLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/depiction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/thumbnail> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageDisambiguates> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#narrowerTransitive> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#broaderTransitive> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/birthPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shortDescription> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:generic-name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/givenName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/surname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/birthDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dateOfBirth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/starring> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/birthYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/placeOfBirth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/starring> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/birthPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/caption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/deathDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dateOfDeath> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/narrowerTerm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/deathYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/deathPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:pubchem-stereo-compound-id> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:stitch-stereo-compound-id> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:pubchem-flat-compound-id> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:stitch-flat-compound-id> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/occupation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/placeOfDeath> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/deathPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/occupation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#altLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/settlementType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#definition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/genre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/family> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:x-spl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/viafId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/homepage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/deathDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/writer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wordnet_type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:brand-name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#subClassOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/genre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:pdf-url> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/binomialAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/familia> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/years> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/producer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#seeAlso> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/writer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/icd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/artist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/genus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/producer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/architecturalStyle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/iupacName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/before> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/after> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/order> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/almaMater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/instrument> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/spouse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/interactionDrug2> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/text> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/interactionDrug1> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/director> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/birthDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/knownFor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/bodySite> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/associatedMusicalArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/associatedBand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/field> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/sider/resource/sider/sideEffect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/almaMater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/kingdom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/regnum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/predecessor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/casNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/possibleDiseaseTarget> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ordo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationality> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/pubchem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/atcPrefix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/location> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/smiles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/successor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/country> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/director> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/atcPrefix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/associatedActs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:mapping-result> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/icd10> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/image> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/knownFor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/website> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/influencedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/influences> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pfamDomainFunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/icd9> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/alias> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stdinchikey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/verifiedrevid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/class> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/children> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/author> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/synonym> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/binomialAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/iupacName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meshid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/author> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/inclusion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/fdaUniiCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/termStart> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/artist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/award> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/birthName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/country> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/c> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/inchikey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/deathCause> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alternativeNames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/field> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/genus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/molecularWeight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pages> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/deathCause> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chemspiderid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/verifiedfields> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/termEnd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/h> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/width> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/meshId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/campus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/casNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/architecture> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/id> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/issue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/activeYearsStartYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unii> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/routesOfAdministration> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/limsDrugId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/creationDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/state> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/updateDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/primaryAccessionNo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/structure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genericName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/massSpecFile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pubchem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/n> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/molecularWeightAverage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/label> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/chemicalFormula> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/species> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/atcSuffix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/swissprotId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/swissprotPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/nationality> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/molecularWeightMono> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/atcSuffix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drugCategory> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/smilesStringCanonical> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/smilesStringIsomeric> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/swissprotName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/chemicalIupacName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/proteinSequence> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/o> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/numberOfResidues> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/essentiality> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/molecularWeight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/theoreticalPi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/predictedWaterSolubility> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/predictedLogs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/predictedLogpHydrophobicity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/awards> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pubchemCompoundId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pubchemSubstanceId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/inchiIdentifier> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/inchiKey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/secondaryAccessionNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#differentFrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/music> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/year> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pmid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/volume> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageSize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genbankIdGenePage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genbankIdGene> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd1Team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/birthName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/goClassificationComponent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subdivision> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/location> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/emedicinesubj> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/synonyms> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vauthors> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/exclusion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/generalFunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/successor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/causalMechanisms> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/watchedfields> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/publisher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stdinchi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/office> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/brandMixture> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dorlandspre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/phylum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/geneName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/activeYearsEndYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/spouse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/demographics1Info> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/dorlandsSuffix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/dorlandsPrefix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/date> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/recordLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/musicalArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/musicalBand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/kegg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/length> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/bio2rdf_vocabulary:x-identifiers.org> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/discipline> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/specificFunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/schooltype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagesize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/classis> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/binomial> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/inchi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/goals> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/phylum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/product> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/instrument> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/yearsActive> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/r1Surface> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pdbIdPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pdbId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/academicDiscipline> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/episodenumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/journal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fields> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/party> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/industry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/relation#hasICD10code> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/residence> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/hetId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ingredient> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/medlineplus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/influenced> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/battle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/products> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/musicComposer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pdbExperimentalId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagefile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/influenced> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/diseasesdb> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/careerStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/president> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/religion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/battles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chembl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/diseasesdb> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/graypage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/education> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/graysubject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/grayPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/parent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/graySubject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genbankIdProteinPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genbankIdProtein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/industry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/signsAndSymptoms> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/education> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/drugbank> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/drugbank> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/affiliation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Work/runtime> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/legalStatus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/series> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/originalairdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/runtime> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/workplaces> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/division> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dorlandssuf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/campus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/activeYearsStartDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/publisher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subdivisionType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/residence> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/commander> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cinematography> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/region> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/parents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/runtime> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/othernames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/dosageForm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/source> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/state> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageCaption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/etiologyType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/bodySystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/profession> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd2Team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/extra> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/guests> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/activeYearsEndDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/clubs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/issn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/keyPeople> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/casRegistryNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/city> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/editing> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/candidate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/emedicinetopic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lccn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/genusAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/doi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/origin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/distributor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/iupacname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shortsummary> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/workInstitutions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/series> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/tradename> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/metabolism> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/grades> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/emedicineSubject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/s> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/emedicineTopic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unrankedClassis> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unrankedDivisio> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/format> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/chEBI> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/background> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/viaf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/excretion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/released> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/creator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/wikiPageWikiLink> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/religion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/restingPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/icd11> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/entrezgene> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/atcCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/description> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/link> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/omim> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/child> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/legalUs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/hometown> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/background> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/url> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/party> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pastMembers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/studio> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/established> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/superfamilia> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/reaction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unrankedOrdo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/office> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/quote> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/abbreviation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/termPeriod> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/hgncId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/hgncIdPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lccnId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genatlasId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/omim> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/distributor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/caps> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/creator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/order> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/locus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/founder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/chromosomeLocation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/editor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/affiliation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pregnancyUs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/primeminister> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/position> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/foundation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/eliminationHalfLife> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/oclc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/affectedOrganism> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/affiliations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/homepage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/bio2rdfSymbol> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genecardId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/stateOfOrigin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/term> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/region> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/releaseDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prizes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subfamilia> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/relatives> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/mechanismOfAction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/issn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/indication> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/literaryGenre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/format> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pharmacology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/01/geo/wgs84_pos#geometry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/oclc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/father> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.georss.org/georss/point> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/align> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/history> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/restingPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/foundingYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/medlineplus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/cinematography> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/subsequentWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/first> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/founded> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/writtenby> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/previousWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/abbreviation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rank> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/commander> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/experimentalLogpHydrophobicity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/logo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/guest> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/portrayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/currentMembers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/directedby> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/domain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/keggCompoundId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/domain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/formerBandMember> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pathway> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/status> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lats> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bioavailability> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/longDefinition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/aux> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/president> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/audioFormat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/orderInOffice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/profession> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/relative> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/translitLang1Type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/headquarters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/branch> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/mechanismOfInjury> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chebi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/hprdId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/leader> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/firstPublicationYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/report> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/preceded> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/frequencyOfPublication> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/school> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/city> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/fullySpecifiedName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/branchFrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pushpinMap> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/succeeded> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cover> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/branchfrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/motto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#related> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mother> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd1Score> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meshname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/event> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/color> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/meltingPoint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pharmgkbId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/note> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/college> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/position> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd3Team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/data> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/leaderName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/content> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/monarch> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alongside> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/eissn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/editing> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/contraindicationInsert> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fullname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/last> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meshnumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/screenplay> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/creators> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/workInstitution> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/militaryBranch> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/doctoralAdvisor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/p> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/halfLife> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/isbn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/citizenship> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/interactionInsert> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/reference> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/district> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/impactYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alias> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/impact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subdivisionRanks> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/class> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/ahfsCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/platforms> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/experimentalWaterSolubility> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/legalUk> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/link1Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/serviceyears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/keyPerson> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/nerve> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/intent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/rxlistLink> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/foodInteraction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/symbol> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/biotransformation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drugIdNumberPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/dpdDrugIdNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pushpinMapsize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pregnancyCategory> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/reason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/powers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/nonFictionSubject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/toxicity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/absorption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/yearsactive> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/executiveProducer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/honorificSuffix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/artery> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/built> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/t> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/focus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/artery> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd2Score> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/relations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/proteinBound> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pmc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/impactFactor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/impactFactorAsOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#domain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voiceActor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageWidth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/keggDrugId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/signal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/bandMember> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/doctoralAdvisor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/meshName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/commands> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nativeName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/computingPlatform> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/soundRecording> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gnd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/budget> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/owner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd1Seed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ribbon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagename> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/leaderTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/referee> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/legalAu> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/birthname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/formerTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/drugName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/individualisedGnd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gross> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#equivalentClass> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/developer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/harvid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/requireManualInspection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/updateCitations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/updatePage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/updateProteinBox> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/updateSummary> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/langs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/motto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/msdsFiles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/modified> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subdivisionName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/meshNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/isbn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/colourName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latns> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longew> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/portrayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/enzyme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/proteinBinding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/leaderFunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beforeElection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chronology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/otherNames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pregnancyAu> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/areaServed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/gross> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mediaType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nerve> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/militaryCommand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/notableWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mainInterests> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/patientInformationInsert> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/composer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/doctoralStudents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/afterElection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/component> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfPages> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/school> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/students> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/formation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/owner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/family> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/created> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/signature> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel#superClassOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/branchTo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/governingBody> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/DAV#ownerUser> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#range> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alliances> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/doctoralStudent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/serviceStartYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/link2Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/council> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/budget> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/extent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/chebiId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/target> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/allegiance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/mainInterest> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableworks> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/subclassBaseInclusion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/honorificPrefix> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prodcode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/relation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locmapin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stadium> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mainIngredient> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/height> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/added> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/manageryears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/refnum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/foundedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/braininfotype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/grades> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/architect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/neurolex> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/virusGroup> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/neurolexid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/serviceEndYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/overall> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/executiveProducer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coden> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locationCity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd3Score> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/description> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/fdaLabelFiles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longDirection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latDirection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/primeMinister> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/managerclubs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/brainInfoNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/brainInfoType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latDegrees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longMinutes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latMinutes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longDegrees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latSeconds> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/address> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longSeconds> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/composer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/style> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/company> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subordo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unit> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/speciality> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd2Seed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/viewers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/voice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/state> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/foundedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ethnicity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/branchto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/coden> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/nick> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/isPartOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/topoMaker> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subclassis> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/healthcare> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/licenceUs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/teams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/presenter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/militaryUnit> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/conviction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/related> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/network> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/bioavailability> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beds> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/governmentType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/showName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/number> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/f> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/debut> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/citizenship> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nominee> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gender> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voices> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/predecessor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/species> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/emergency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/nrhpReferenceNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/vein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/monarch> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/added> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/governmentType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/campusType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/followedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/developer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/headquarter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/movement> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/season> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/demographics2Title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/employer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/firstAppearance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/filename> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/page> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locationCountry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/precededBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/yearOfConstruction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/category> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/instruments> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lyrics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/objectOrSubstanceProducingInjury> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/releaseDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/locationCity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/firstAired> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/buildingType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/college> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coachYears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/tribus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/manufacturer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#subject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lccn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/drainsTo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numEmployees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/drainsto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/narrator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/org/group> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/partof> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/race> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Person/height> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/recorded> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sex> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numEpisodes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/mediaType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/album> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/supplies> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/next> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/direction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/race> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/commonLanguages> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/precursor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/casSupplemental> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nota> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/allegiance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latitude> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mabType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longitude> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lastAired> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/employer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coachTeams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/formationYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mainCharTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/divisio> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/place> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/appointer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coordDisplay> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/presenter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/televisionSeries> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd3Seed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/governor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/purpose> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/story> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableStudents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableWorks> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fullName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/precursor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/house> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/w> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/club> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableInstruments> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/coachedTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/iupharLigand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/schoolTradition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/classification> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/symbol> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/foundedDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/influencedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/editor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/managerClub> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/movement> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/code> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dean> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/legalCa> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/openingYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/votes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/academicAdvisors> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/auto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/builder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/establishedTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfStudents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/notableStudent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/typeSpeciesAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ideology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hairColor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/score> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/uniprot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/size> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/trainer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfEmployees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wstitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/time> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/reign> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/architecturalStyle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/philosophicalSchool> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/academicAdvisor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/supplies> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfEpisodes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/free> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/service> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/status> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prev> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/entrezgene> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/population> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/garrison> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mapType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mapCaption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/skills> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/runningMate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/genereviewsname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/summaryText> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/with> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/appointed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/genereviewsnbk> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cause> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd4Team> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/casualties> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pubDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rtitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/musicalguests> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationBlank1Title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/braininfonumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/sider/resource/sider/drugName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/network> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/placeofburial> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/architect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/members> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/statlabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/movieLanguage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/percentage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/debutteam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/debutyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/refseq> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coordinatesDisplay> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/namedFor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/reference> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/icdo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ideology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/narrator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/parent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/institution> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/introducer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/youthclubs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/companyType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd4Score> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationBlank2Title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/statvalue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/highlights> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/trainer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blood> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hgncid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/innervates> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/modes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/placeOfBurial> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/finalteam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/builder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/revenue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/company> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/authority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coverArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/period> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/finalyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nominator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/episodeList> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rev> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/succession> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/namedAfter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/address> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/combatant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pfam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/faculty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationalteam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/othername> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beatifiedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/transTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/colwidth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/conference> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/partner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chromosome> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fueltype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/media> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/use> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/openaccess> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/interpro> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipBuilder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nextSingle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/b> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/band> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/v> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/operatingSystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/principal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/regionServed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/companyName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/bedCount> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bgcolour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bats> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thisSingle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/freeLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipNamesake> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/services> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/charge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/throws> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationalyears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imgsize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/head> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/combatant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nonProfitName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat1value> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bishop> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat1label> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/place> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/confstanding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat2label> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/insertion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/topo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat2value> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/specialism> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/beatifiedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/innervates> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/characterName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/br> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/easiestRoute> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/area> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/footer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rows> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfSeasons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/basedOn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/owners> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/notableIdea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pushpinMapCaption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/deliveries> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/used> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/names> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat3label> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stat3value> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pkaIsoelectricPoint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/restingplace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lastSingle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/manager> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/openAccessContent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationalcaps> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/synthesisReference> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/related> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/computingMedia> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/foundationPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/admCtrType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/curlocl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/personFunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ethnicity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/06/sw-vocab-status/ns#term_status> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/flower> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/action> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mission> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/accessdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/runs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/causalAgents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/debutdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/siblings> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/regionServed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/languages> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/laterwork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numSeasons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/license> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/deputy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/coach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/membership> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/album> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/pdrhealthLink> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/utcOffset> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/researchField> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bgcolor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/convictionPenalty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationalgoals> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/endyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lawsapplied> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/superphylum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/matches> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/constituency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/from> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ht> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/colors> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/date> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/text> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/header> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/completionDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/icdo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/finaldate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/significantother> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/partners> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/battingSide> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/throwingSide> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nativeNameLang> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/garrison> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wickets> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/statusSystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/premier> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/regent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/arm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/column> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/parliament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/batAvg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/statisticLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/statisticValue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/catches/stumpings> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Person/weight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/congress> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/introduced> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/conservationStatus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rels> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/homeTown> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/englishtitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wikt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/ns#containedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/r2Surface> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/athletics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/criminalActivities> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/capshape> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/by> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/formerNames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/to> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/popyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/coverArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/conservationStatusSystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/list> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/headcoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/topScore> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/training> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/weight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/locationCountry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/elevation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gold> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/illustrator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/licenceEu> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/majority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/recordedIn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thesisYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pnd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/footnotes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fromAlbum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dorlands> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/revenue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/university> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thesisTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bowlAvg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/organization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/undergrad> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/channel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/animator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/training> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pushpinLabelPosition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/strength> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/ns/void#propertyPartition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableIdeas> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/ns/void#property> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/signedpresident> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/timezone> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/heightIn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/heightFt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/border> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#qmfValRange-rvrRestrictions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/role> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagefilel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/eponym> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dorlandsid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/interpersonalRelationsImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/strength> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/languageFamily> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pictureFormat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/basedOn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagefiler> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/number> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/parentCompany> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nickname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/animator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/canonizedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/realName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/primaryUser> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/purpose> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bestBowling> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/passeddate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/system> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/headline> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/governor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/canonizedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/kanjititle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/staff> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/characters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/typeSpecies> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chemicalFormula> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagealt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/managers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nationalOrigin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/officialName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/province> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/colour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lastAppearance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/medium> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/themeMusicComposer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rd4Seed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/colours> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cousins> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/romajititle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playedFor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/altsymbols> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lieutenant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/writers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/constituencyMp> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/operator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/understandingImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sign> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/passedvote> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipCountry> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/foundingDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/titles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lcc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/teacher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/international> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/refnat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/attendance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/postalCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/weight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/aliases> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/otherparty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/placeofburialLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/consecratedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fivefor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/postgrad> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/television> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/whichgills> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/convictionStatus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dissent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meltingPoint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/commons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/officialSchoolColour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ga> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/as> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/enrollment> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/people> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdvocab.info/RDARelationshipsWEMI/manifestationOfWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nonProfitLogo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableCommanders> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/narrated> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/recordedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/channel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bSide> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/tenfor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/romances> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coordinatesRegion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rangeMap> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/license> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/veneratedIn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pushpinLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/givesriseto> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/height> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/experimentalLogs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/credits> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/method> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/startyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/notableCommander> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/populationTotal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PopulatedPlace/areaTotal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/bSide> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/veneratedIn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/group> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/atcSupplemental> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/q> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sporeprintcolor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/utcOffset> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/condition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/published> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/timeZone> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chapterName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/committees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/howedible> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nrhpType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/salign> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/draftYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/era> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/areaTotal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/passedbody> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mascot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/book> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipOwner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/formerName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/detainedAt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/illustrator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/l> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/designer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/host> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ensign> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/home> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ecologicaltype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/tree> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationAsOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/taxDomain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/activitySector> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/decideyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/boards> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/companyLogo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/decidedate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/landscape> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/end> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/litigants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ranking> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ispartof> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pseudonym> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/militaryRank> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/video> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/operatingSystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/mission> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/joinmajority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/mobilityImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/onlinebooks> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/crewMembers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latestReleaseVersion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageSkyline> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hymeniumtype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stipecharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rangeMapCaption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/award> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/agencyName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/drainsfrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opened> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/partner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meaning> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/raceHorse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/drainsFrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/systematicname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/atcvet> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locationTown> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sentence> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nonProfitType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/currentclub> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pop> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/weapons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/typeStrain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/article> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/funding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/isPartOfAnatomicalStructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/houses> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/startDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/formernames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/isPartOfMilitaryConflict> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/scotus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/facultySize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/airdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipFate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/antagonist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fuelType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thesisUrl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nearestCity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/usvol> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/youthyears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/scop> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blank2InfoSec> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/holding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/uspage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/childrenAndYouthImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/batting> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hangul> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/leaderName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/argueyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/partsType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/leader> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mpsub> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/completionDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/works> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/casSupplemental> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/portal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/createdCardinalBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/keywords> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/board> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/appointer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/engine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/listEpisodes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voicedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playerYears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/penalty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/arguedate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/causalties> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/translitLang2Type> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/familiaAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/hgncid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/communicationImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/venue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/pseudonym> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationTotal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vicepresident> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/uniprot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dewey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/refseq> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/postseason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/openingTheme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mapSize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/linecolor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/volumenumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nonProfitSlogan> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/feastDay> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/points> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/retired> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/origin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/elevationM> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/m> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/brm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fatalities> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lieutenant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipPropulsion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/headLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/companySlogan> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/horses> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/deputy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/colour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chancellor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/dcc> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playerTeams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/judges> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/introducedby> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sports> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/episode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/taxon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prisonName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/change> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/careerStart> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/map> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/sport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/managedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/freeText> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/result> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chief1Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/twomin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lbl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/states> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/concurrence> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/col> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wife> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/result> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/d> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/incumbent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dates> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/titleOrig> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/totalcaps> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/totalgoals> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/highSchool> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nfl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/jr/sr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ign> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/socialParticipationImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/weightLb> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chairman> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/columns> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/timezoneDst> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/postalCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/governorGeneral> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/closed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/epochs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/silver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coronation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/burialPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/husband> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/utcOffsetDst> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bowlname> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/daughters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/employees> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/associate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipSensors> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ipaSymbol> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/books> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ruAmateurclubs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pdbLigand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/careerEnd> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationDensityKm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#item> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/spokenIn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/leaderTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipLaunched> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/sider/resource/sider/siderDrugId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/sider/resource/sider/stitchId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/page> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/totalLength> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagenamel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subphylum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/membership> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/areaCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/areaCode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/netIncome> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/motm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagenamer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fma> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/band> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/latestReleaseVersion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#qmfName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/float> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/parentOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#qmfSuperFormats> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blankName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sisters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://open.vocab.org/terms/describes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2007/05/powder-s#describedby> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/formerName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/chromosome> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/isni> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/jurisdiction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subcat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hazards> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/endowment> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/inaugural> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/goldMedalist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/district> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/comicColor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/postalCodeType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/materials> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/programmingLanguage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/row> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/day> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/university> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfUndergraduateStudents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/injuries> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shortTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thisAlbum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/lymph> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bowling> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/areaLand> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/selibr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/niaidChemdb> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/participants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/overallRecord> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/overallRecord> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/establishedDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/publicationDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prosite> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/nearestCity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/otherParty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/draftpick> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/patron> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ruNationalcaps> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/td> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/isniId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gspot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/protein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subsid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/production> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/translator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/born> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/agenciesaffected> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pos> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/joindissent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/parentOrganisation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ground> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/post> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ruNationalyears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/programme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/firstFlight> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageMap> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/allianceColor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/workActivitiesImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipArmament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/victims> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/formed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/draftPick> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/carbs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/conf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voiceactor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ta> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opentheme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/italicTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dependencyLiability> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/draftround> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/era> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/episodeNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/draftyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wikiLinks> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/enactedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rector> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/originalreldate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ruPosition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blank1Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/captain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/side> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/selibrId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/consecrationDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coordinatesType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/small> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opponent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/launchDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/prior> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/citation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/championships> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PopulatedPlace/populationDensity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/introducedin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/draftRound> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/potassiumMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/calciumMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ironMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cube> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fangraphs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/seasonNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lastAlbum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/kj> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/gameEngine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/client> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/allWriting> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/debutTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/controlledby> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/firstDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/headName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/vicePresident> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/center> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/brothers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/highschool> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wp> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lymph> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longTitle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/offstyle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/religions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pdb> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/magnesiumMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/characterInPlay> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/chief1Position> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageAlt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/capital> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/patronage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/j> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pfr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/quoted> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/phosphorusMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/areaTotalKm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/prov#category> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/in> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/teamWidth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/populationDensity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unitName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blank1InfoSec> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dipstyle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/artists> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/slogan> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/significantBuilding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/unitPref> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/en> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/saint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/no> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/conflict> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/province> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/apprehended> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vitcMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipCapacity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/niacinMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/riboflavinMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/about> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nextAlbum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/person> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/firstDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bronze> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/umpires> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/currentowner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/populationPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/philosophy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subregnum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imgw> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/riding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/proTem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/updated> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/start> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vpName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stateHouse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sortkey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/thiaminMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/minister1Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/assembly> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/currentMember> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/poleDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/arm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/issued> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/formationDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/employmentField> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/standards> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sourceUsda> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/hasVersion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/introduceddate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/signeddate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/long> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fontsize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/extraColumn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/others> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locale> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/programmingLanguage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ft> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/diseases> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/denomination> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playingTeams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vitb6Mg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#inheritFrom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/selfCareImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/majorShrine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fiber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/owningOrganisation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/material> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playerPositions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/chemicalStructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/criminalCharge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beginyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/saint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipOperator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/citations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/voicetype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/zincMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designatedOther1Date> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/poll> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/other> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/month> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/consort> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/investigationFindings> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/stateSenate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/voiceType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/assets> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/officiallyOpenedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/genomicCharacteristics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/collapsed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/occupants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/fastestDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/locussupplementarydata> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mottoeng> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/organism> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/tenant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blankInfo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/lifeManagementActivitiesImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/numberOfPostgraduateStudents> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/aunts> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hanja> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/archaeologists> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sodiumMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/topics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/patrons> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alternateName> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mainOrgan> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imageFile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/above> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/logoSize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/manufacturer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/staff> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ordination> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ruNationalteam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/constell> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/netIncome> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/databasefootball> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/majorShrine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/folateUg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#inverseOf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/camera> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/relatedOccupation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/game> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bnf> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fastDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lp> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/uncles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/officialNames> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/areaWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/variants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/station> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/owningCompany> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/stylisticOrigin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/coordParameters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/magazine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/meltingHigh> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/course> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/operator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/statuteBookChapter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/haircolor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/schoolboard> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/prov#component> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/confrecord> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/bg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/electorate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/mapsize> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/origLang> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/minister> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blank1Info> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/insignia> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/schoolBoard> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/currentTenants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wins> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/discoverer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/founders> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/royalAssent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/atcSupplemental> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/votesmart> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/announcers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/isoRegion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/converted> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ground> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/alterEgo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/blankInfoSec> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/decimal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/experimentalCaco2Permeability> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/draftTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designatedNrhpType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/crew> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/awardedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/draftYear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vicePresident> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/k> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/manager> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/volumes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/supports> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/i> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gpTeams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/surface> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/populationdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#noInherit> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/court> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subtribus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/proyears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/viceChancellor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/siteCityst> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/causeOfDeath> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/internationalAffiliation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/department> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/significantBuildings> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/eyeColor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cultures> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/iupacnameHidden> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/bnfId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designatedOther1Number> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/architectureStyle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/screenshot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/partyColour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/articulations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/eurog> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nieces/nephews> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/see> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opmProtein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/manganeseMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/subsidiary> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/parentAgency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/signatureAlt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/active> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rebounds> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/hostCity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/poleDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rss> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/usedBy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/demographics1Title> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numStaff> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/assembly> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/date> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fec> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/divisions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/gi> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/presenters> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latD> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/weightLbs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/translator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/north> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/currentStatus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nephews> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/sugars> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/vaccineType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/total> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longD> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pantothenicMg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/mascot> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/nieces> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/routeJunction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designatedOther1NumPosition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/draftTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/roadhr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/rte> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numSeries> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/previousPost> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/1999/02/22-rdf-syntax-ns#_1> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/designatedOther> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/assist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/wars> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/honors> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/homehr> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/elevationFt> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/acronym> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipComplement> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/aunts/uncles> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/dedication> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/east> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/discoverer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/solubility> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/citePublicLaw> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/spaceStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/schoolActivitiesImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/congbio> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/primaryDeity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/consecration> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pastteams> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beatifiedDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/territorialExtent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/museum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/num> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagecaption> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/heightft> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/householdActivitiesImpact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/death> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/origins> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/effectiveDate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/designCompany> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/superclassis> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/picture> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cfbdwid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/colorcode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/originalteam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/genbankId> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/pin> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/originalLanguage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/subgenus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/showMedals> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opmFamily> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/south> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latNs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/operatingIncome> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/strokes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/ipaNumber> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/logoWidth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/testdebutdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/product> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/longEw> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/league> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/top> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/notableWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/testdebutyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/moe> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/chairman> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/dean> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/networth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/opensecrets> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/statsend> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://yago-knowledge.org/resource/linksTo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/certification> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/preceding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/titleAmended> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/publicLawUrl> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/officialLanguages> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/governingBody> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/trackNo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/decile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/jurisdiction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/infraordo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/demographic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lasttestdate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipCommissioned> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/county> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/billed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lasttestyear> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/upperAge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/motive> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/operations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipAcquired> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/contaminants> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/playingYears> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/beatifiedPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/speciesAuthority> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lowerAge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/firstLeader> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/championship> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/runwayLength> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lang> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/tests> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/floorCount> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/registration> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fedSen> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#qmfIsBijection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#qmfIsStable> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel#isLike> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/selection> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/numVolunteers> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/allLyrics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/survey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/programmer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/shoots> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/areaLandKm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/r3Surface> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/homeCoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/fg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/issues> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/episodes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/imagesizer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/lonDeg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/billed> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/braille> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/latDeg> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/g> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://id.who.int/icd/icd/schema/histopathology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/openToPublic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/shipOutOfService> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/streetaddress> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/summary> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/cities> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/property/heightin> .
+}

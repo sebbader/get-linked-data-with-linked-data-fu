@@ -1,0 +1,3373 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> . 
+@prefix httpm: <http://www.w3.org/2011/http-methods#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+
+######################Rules to follow
+{
+	?x a ?y .
+} => {
+	[]	http:mthd httpm:GET ; 
+		http:requestURI ?y .
+} . 
+
+####################### Relations to load
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMap> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#array-of-string> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#Thing> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#Class> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#Ontology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#Class> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#OntologyProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#Restriction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#ObjectProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#DeprecatedClass> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#DeprecatedProperty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/AilmentCondition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/BiologicalLivingObject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Situation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Country> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/d0.owl#Location> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Place> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cleric> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Country> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Place> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PopulatedPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Saint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Wikidata:Q532> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/Document> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel#RefConcept> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.opengis.net/gml/_Feature> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wikidata.dbpedia.org/resource/Q215627> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wikidata.dbpedia.org/resource/Q5> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ArchitecturalStructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BiologicalDatabase> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Building> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Chef> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Convention> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Database> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Food> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Hospital> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Library> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Magazine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MusicalWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Park> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Project> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ResearchProject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/UnitOfWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Book_CW> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationObject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#PlanExecution> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Hospital> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Library> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Park> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/Agent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Activity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Ambassador> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Architect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Artist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Astronaut> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Athlete> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BeautyQueen> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Coach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Criminal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Economist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Engineer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Entomologist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FictionalCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Historian> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HorseTrainer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Journalist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Judge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MeanOfTransportation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Medician> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MilitaryPerson> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Model> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Monarch> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Mountain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MythologicalFigure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Noble> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Philosopher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PlayboyPlaymate> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Politician> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Presenter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Religious> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Royalty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsManager> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Tower> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/Image> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/OnlineAccount> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/Organization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/PersonalProfileDocument> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/AirlineCompany> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Association> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/OrganizationOfOrganizations> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/TradeUnion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/sparql-service-description#Service> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/umls_vocabulary:Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Brand-Drug-Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Drug-Effect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Range-Frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Specified-Frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Drink> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q35509> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q8047> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Baronet> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BritishRoyalty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cave> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Game> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Disease> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/sparql-service-description#Dataset> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/sparql-service-description#Feature> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/sparql-service-description#Graph> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/sparql-service-description#Language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/sider/resource/sider/drugs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GreenAlga> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Algae> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Bridge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Conifer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Moss> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Stadium> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/StadiumOrArena> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q12280> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1390> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q28389> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q34442> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q728> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q9609> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bridge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ClubMoss> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Conifer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Moss> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Road> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RouteOfTransportation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportFacility> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Stadium> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Weapon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/dailymed_vocabulary:Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/pubchem.compound_vocabulary:Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Combination-Drug> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Drug> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Generic-Drug-Name> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/stitch_vocabulary:Resource> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://bio2rdf.org/sider_vocabulary:Potential-Frequency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#FunctionalSubstance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Drug> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/DrugProduct> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Comedian> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13414980> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1930187> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q378622> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q486839> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q488111> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q729> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7377> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q847400> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AdultActor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AustralianRulesFootballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Jockey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MilitaryStructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/NascarDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RacingDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Skater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SpeedwayRider> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1298668> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SpaceMission> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Spacecraft> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SalesContract> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/CyclingTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SkiArea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SkiArea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/SkiResort> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Artist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Mollusk> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/LandmarksOrHistoricalBuildings> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Amphibian> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Arachnid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Archaea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bacteria> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bird> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Crustacean> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Fish> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Fungus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HistoricBuilding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Insect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Mollusca> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RaceHorse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Reptile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Writer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Ginkgo> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Lymph> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/AnimalBodyPart> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Artery> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Bone_BodyPart> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Brain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Embryology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Muscle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Nerve> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Vein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#BiologicalObject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AnatomicalStructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Artery> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bone> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Brain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Embryology> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Ligament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Lymph> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Muscle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Nerve> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Vein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Ship> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Bacterium> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Model_airplane> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Ship> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/TransportationDevice_Vehicle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11446> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Curler> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/DartsPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SquashPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q16278103> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Animal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/EukaryoticCell> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Insect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoccerClub> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ComputerGameProgram> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Fungus> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MilitaryPerson> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Movie_CW> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Holiday> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Wikidata:Q11424> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Movie> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/SportsTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PlayboyModel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q116> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q315> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q34770> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Language> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FormalProductType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SportsEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/WrestlingSportsEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ArtificialSatellite> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Satellite> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/WrestlingEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/MusicRecording> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2743> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ChemicalSubstanceType> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AcademicJournal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Animal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Eukaryote> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PeriodicalLiterature> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Species> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TelevisionShow> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Website> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Organization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Organism> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/WebPage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Album> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Plant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ProgrammingLanguage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RadioProgram> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FloweringPlant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Plant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/RadioStation_Organization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wikidata.dbpedia.org/resource/Q482994> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/MusicAlbum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FashionModel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/WorldWideWebPage_PCW> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q23413> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4270517> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q46970> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Castle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/CelestialBody> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Skier> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Star> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q373085> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Chancellor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ClassicalMusicArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Color> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/BankOrCreditUnion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bank> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Colour> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FootballLeagueSeason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Poem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoccerLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoccerTournament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsSeason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsTeamSeason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Tournament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q500834> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q5185279> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AmusementParkAttraction> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RollerCoaster> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/OlympicEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Olympics> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Bird> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ChemicalSubstance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#ChemicalObject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2004/02/skos/core#Concept> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#Axiom> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2002/07/owl#NamedIndividual> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Biomolecule> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ChemicalCompound> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Protein> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/ns#DataItem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drugs> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/vocab/resource/class/Offer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Book> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/CreativeWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/ontology/bibo/Book> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/ontology/bibo/Journal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Book> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Work> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/WrittenWork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/foaf/0.1/Person> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ProteinMolecule> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wikidata.dbpedia.org/resource/Q11173> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wikidata.dbpedia.org/resource/Q8386> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/dailymed/resource/dailymed/ingredients> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/formats/Format> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://web.resource.org/rss/1.0/channel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/sioc/ns#Space> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/sioc/ns#User> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/sioc/ns#UserAccount> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/sioc/ns#WebLog> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://vocab.org/bio/0.1/Birth> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/ns/auth/rsa#RSAPublicKey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/dcam/VocabularyEncodingScheme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/dc/terms/AgentClass> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Address> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.w3.org/2000/10/swap/pim/contact#_SubjectToChange> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RailwayLine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q728937> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q618779> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cycad> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HockeyTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RadioStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/RadioStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4498974> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FloweringPlant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Action> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Cycad> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Sport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q349> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ComicStrip> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Amphibian> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Agent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Company> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/EducationalInstitution> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Event> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Fashion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Genre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MilitaryConflict> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MusicGenre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Non-ProfitOrganisation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/OfficeHolder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Organisation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Person> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/School> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Scientist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SocietalEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Software> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TopicalConcept> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/University> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Business> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/EducationalOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/NonProfitOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/University> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Concept> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#InformationEntity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialPerson> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/CollegeOrUniversity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/EducationalOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Event> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Organization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Person> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/School> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Band> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Beverage> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Broadcaster> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cheese> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Enzyme> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GovernmentAgency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Group> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MilitaryUnit> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PoliticalParty> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PublicTransitSystem> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsTeam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TradeUnion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Device> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/InformationAppliance> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedArtifact> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/GovernmentOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Artwork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cartoon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Film> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Musical> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TelevisionEpisode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TelevisionSeason> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/VideoGame> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BodyOfWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Lake> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Mineral> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/NaturalPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/BodyOfWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/LakeBodyOfWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Prison> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Reptile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HistoricPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RugbyPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ShoppingMall> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Facility_Construct> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Street_Generic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/ShoppingCenter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11315> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Poet> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q49757> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13365117> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HandballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://vocab.org/frbr/core#Work> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q12136> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Actor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Athlete> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/BaseballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Chancellor_HeadOfGovernment> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Cleric> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ConflictEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Criminal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MusicalPerformer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Philosopher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Place> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PrimeMinister_HeadOfGovernment> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/RoyalFamily> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Saint> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SoccerCoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/StateGovernor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/TVShow_IBT> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/TVShow_SingleCW> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Wrestler> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/TVEpisode> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13156709> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q132050> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13382519> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13415036> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q15416> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q15982795> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q16533> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1656682> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2188189> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q245068> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q482994> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q628099> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q9620> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AmericanFootballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Bodybuilder> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Boxer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Comic> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Currency> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GolfPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Governor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoccerManager> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TableTennisPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Sport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4886> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/CultivatedVariety> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q613142> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MusicFestival> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Festival> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q868557> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Airport_Physical> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Astronaut> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Airport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Anime> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BroadcastNetwork> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GaelicGamesPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Manga> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Murderer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TelevisionStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Theatre> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Venue> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Airport> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/TelevisionStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1107> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11631> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1248784> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q141683> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q15265344> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q16266334> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q215380> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q24354> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4610556> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4964182> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q8274> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/College> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Skyscraper> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Troop_MilitaryUnit> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q176799> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q23397> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SpaceStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SpaceStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q25956> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Painter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/VolleyballCoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Gnetophytes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1028181> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7946> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Arachnid> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Fish> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q152> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q25326> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Automobile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FootballPlayer_American> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/GeographicalRegion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/IceHockeyPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Journalist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Manager> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Mayor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Monarch_HeadOfState> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PhysicalDevice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PresidentOfOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Weapon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Product> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q10843402> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q10871364> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1092563> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11173> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11774891> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q12518> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13474373> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13590141> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1370598> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q14128148> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q15410431> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q16917> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q18127> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q188451> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q19088> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q206229> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q215627> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2159907> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2566598> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q265868> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2722764> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q30185> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q30461> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q33999> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3501317> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q36180> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3665646> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q386724> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3918> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q39715> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q41176> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q41710> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q43115> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q43229> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q483501> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q486972> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4936952> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q5> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q571> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7075> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7278> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7365> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q737498> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7397> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q8054> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q82955> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q8386> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q855091> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q901> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q9259> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q937857> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Actor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Automobile> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BaseballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BasketballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ChristianBishop> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/CollegeCoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Comedian> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ComicsCreator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cricketer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/EthnicGroup> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FashionDesigner> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GridironFootballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Guitarist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Gymnast> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/IceHockeyPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Instrumentalist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Lighthouse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Location> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MartialArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Mayor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Medicine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MotorcycleRider> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MotorsportRacer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MusicalArtist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PokerPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/President> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PrimeMinister> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RadioHost> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ReligiousBuilding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Senator> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SnookerChamp> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SnookerPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoccerPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Swimmer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/VoiceActor> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/WinterSportPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/WorldHeritageSite> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Wrestler> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BasketballLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/IceHockeyLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Island> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/types#DataCreatingService> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://usefulinc.com/ns/doap#Version> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://rdfs.org/ns/void#Dataset> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/ns#DataCreation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/ns#DataProvidingService> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://purl.org/net/provenance/ns#NonHumanAgent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://usefulinc.com/ns/doap#Project> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/wot/0.1/Endorsement> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://xmlns.com/wot/0.1/PubKey> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/drug_interactions> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/enzymes> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/references> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://wifo5-04.informatik.uni-mannheim.de/drugbank/resource/drugbank/targets> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Actor_Voice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Band_MusicGroup> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/BasketballPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Bishop_Clerical> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Boxer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Cardinal_CatholicBishop> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Cyclist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FigureSkater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Judge> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MusicSingle> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MusicalComposition> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/RaceCarDriver> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SoccerPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/TennisPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/d0.owl#Activity> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q10833314> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11410> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q121998> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q13219587> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q134556> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1914636> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q33231> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q947873> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AmericanFootballCoach> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cardinal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Cyclist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FigureSkater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/FormulaOneRacer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Game> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Photographer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ScreenWriter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Single> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SumoWrestler> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TelevisionHost> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/TennisPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Song> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MusicalComposition_Song> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3055126> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/HospitalBuilding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Album_IBO> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Country> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Lighhouse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Location_Underspecified> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Mountain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/MountainRange> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PopulatedPlace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/School_AcademicOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Valley> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Village> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/AdministrativeArea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Hotel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Mountain> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/SportsEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11436> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q15091377> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q159719> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q163740> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q25379> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q27686> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3455524> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3914> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q3957> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q40357> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q41298> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q46831> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q473972> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4989906> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q532> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q6256> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q627603> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q756> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q7889> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q8502> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/class/Book> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AdministrativeRegion> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Aircraft> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/CyclingRace> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/HollywoodCartoon> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Hotel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Infrastructure> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Monument> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MountainRange> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PowerStation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ProtectedArea> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Race> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Region> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SportsEvent> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Town> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Village> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1067263> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11032> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Newspaper> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Ambassador> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q9143> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Crustacean> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/GolfCourse> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1048525> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/PoloLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Park> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q178790> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/City> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/RiverBodyOfWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q12323> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1445650> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q1555508> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2095> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q2334719> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q23442> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q327333> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q33506> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q4022> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q47521> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q515> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q95074> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/AnimangaCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/City> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ComicsCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Dam> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Island> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/River> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SoapCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Stream> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/BodyOfWater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/CartoonCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/City> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Lake> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/NewspaperSeries> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/River> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Stream> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BadmintonPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Restaurant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Restaurant> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q11707> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Mammal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Mammal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/SoftwareObject> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/MusicGroup> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Airline> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/LawFirm> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Publisher> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/RecordLabel> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/AwardPractice> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Building> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Event> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Magazine> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ParliamentMember> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/PersonWithOccupation> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Politician> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Scientist> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/USRepresentative> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Writer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Description> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Museum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Award> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Case> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Congressman> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/LegalCase> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/MemberOfParliament> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Museum> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Play> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Settlement> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/SupremeCourtOfTheUnitedStatesCase> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/CommunityOrganization> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/FictionalCharacter> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Architect> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Pope> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q188094> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q19546> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q81096> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ArtistDiscography> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/ChessPlayer> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Pope> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/BaseballLeague> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q623109> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q6631808> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Fern> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Station> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Fern> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/ShoppingMallBuilding> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q719456> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/NationalCollegiateAthleticAssociationAthlete> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Galaxy> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://www.wikidata.org/entity/Q318> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://dbpedia.org/ontology/Canal> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Crater> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://umbel.org/umbel/rc/Town> .
+}
+{
+	[]	http:mthd httpm:GET ; 
+		http:requestURI <http://schema.org/Canal> .
+}
